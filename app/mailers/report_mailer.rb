@@ -3,7 +3,7 @@ class ReportMailer < ActionMailer::Base
   
   def report(email, report)
     logger.info "email: " + email
-    logger.info report
+    logger.info "report: " + report.to_query
     @params = report
     mail(to: email, subject: 'Android App Crash')
   end
