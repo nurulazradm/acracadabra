@@ -49,6 +49,10 @@ This is a Rails backend for [ACRA](https://code.google.com/p/acra).
         $ rake db:create
         $ rake db:migrate
 
+3. Set up RSpec
+
+        $ rails generate rspec:install  
+
 4. Run unit tests:
 
         $ rspec
