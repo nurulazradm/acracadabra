@@ -72,9 +72,15 @@ This is a Rails backend for [ACRA](https://code.google.com/p/acra).
 
         $ heroku create --stack cedar
 
+1. Add Heroku add-on(s)
+
+        $ heroku addons:add sendgrid:starter
+
 2. Set Heroku config variables
 
-        $ heroku config:add EMAIL_RECIPIENTS=...
+        $ heroku config:add RECIPIENTS=...
+        $ heroku config:add SENDGRID_USERMANE=...
+        $ heroku config:add SENDGRID_PASSWORD=...
 
 ### Deployment
 
