@@ -48,14 +48,6 @@ This is a Rails backend for [ACRA](https://code.google.com/p/acra).
 
         $ rake db:create
         $ rake db:migrate
-        $ rake db:test:load
-
-3. Load demo data:
-
-        $ rake db:seed
-        $ rake app:load_demo_data
-
-    (When necessary, you can delete the demo data with `rake app:destroy_demo_data`.)
 
 4. Run unit tests:
 
