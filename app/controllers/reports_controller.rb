@@ -4,9 +4,7 @@ class ReportsController < ApplicationController
   
   def create
     recipients = Rails.configuration.recipients
-    logger.info "Recipients: " + recipients
-    logger.info "Params: " + params.to_query
-    ReportMailer.report(recipients, params)
+    ReportMailer.report(recipients, params).deliver
     head :ok
   end
 
