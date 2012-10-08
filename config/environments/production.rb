@@ -74,4 +74,5 @@ Acrar::Application.configure do
     :password       => ENV['SENDGRID_PASSWORD'],
     :domain         => 'heroku.com'
   }
+  ActionMailer::Base.delivery_method = :smtp
 end

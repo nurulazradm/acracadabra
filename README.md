@@ -78,9 +78,7 @@ This is a Rails backend for [ACRA](https://code.google.com/p/acra).
 
 2. Set Heroku config variables
 
-        $ heroku config:add RECIPIENTS=...
-        $ heroku config:add SENDGRID_USERMANE=...
-        $ heroku config:add SENDGRID_PASSWORD=...
+        $ heroku config:add RECIPIENTS=<email_address>
 
 ### Deployment
 
