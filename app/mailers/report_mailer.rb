@@ -1,5 +1,5 @@
 class ReportMailer < ActionMailer::Base
-  default from: 'ACRAR <acrar@livefront.com>'
+  default from: 'ACRAR <jeremy@livefront.com>'
   
   def report(email, report)
     @params = report
