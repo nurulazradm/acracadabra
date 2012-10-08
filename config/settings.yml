@@ -1,0 +1,11 @@
+defaults: &defaults
+  recipients: <%= ENV['RECIPIENTS'] %>
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

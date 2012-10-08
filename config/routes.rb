@@ -1,4 +1,7 @@
 Acrar::Application.routes.draw do
+
+  match 'reports' => 'reports#create', via: :post
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

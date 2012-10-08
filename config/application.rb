@@ -64,5 +64,8 @@ module Acrar
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    
+    # Custom config entries. Refer to the Readme for documentation.
+    config.from_file 'settings.yml'
   end
 end
