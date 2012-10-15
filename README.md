@@ -52,13 +52,17 @@ This is a Rails backend for [ACRA](https://code.google.com/p/acra).
 
         $ rspec
 
-4. Fire it up:
+4. Specify report recipients in the `.env` file.  Example:
+
+        RECIPIENTS=jeremy@livefront.com
+
+5. Fire it up:
 
         $ foreman start
 
     [Foreman](https://github.com/ddollar/foreman) is used because of its ability to easily set environment variables with the `.env` file. 
 
-5. Confirm the dev server is running
+5. Confirm the dev server is running and configured properly
 
     Load `http://localhost:5000` in your browser.
 
@@ -75,7 +79,7 @@ This is a Rails backend for [ACRA](https://code.google.com/p/acra).
 
         $ heroku addons:add sendgrid:starter
 
-2. Set Heroku config variables
+2. Set Heroku config variable for report recipients
 
         $ heroku config:add RECIPIENTS=<email_address>
 
