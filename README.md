@@ -1,6 +1,6 @@
 # acracadabra
 
-Rails backend for [ACRA](https://code.google.com/p/acra/)
+Android crash reports. Detailed. Fast. Direct to your inbox.
 
 ## Contents
 
@@ -13,12 +13,10 @@ Rails backend for [ACRA](https://code.google.com/p/acra/)
 <a name="overview"></a>
 ## Overview
 
+acracadabra is a Rails app that receives ACRA-generated crash reports from Android applications and passes them directly to your email inbox.
+
 [ACRA](https://code.google.com/p/acra) is
 > ...a library enabling Android Application to automatically post their crash reports to a GoogleDoc form. It is targetted to android applications developers to help them get data from their applications when they crash or behave erroneously.
-
-Who wants to mess with setting up a Google spreadsheet and form when you can, in less time, set up a simple web service that will pass along the crash reports directly--and immediately--to you via email?
-
-acracadabra is a Rails app that receives ACRA-generated crash reports from Android applications and passes them directly to your email inbox.
 
 Follow the steps below. You can be up and running in under 20 minutes.
 
