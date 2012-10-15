@@ -150,4 +150,8 @@ This is a Rails backend for [ACRA](https://code.google.com/p/acra).
                 super.onCreate();
             }
 
-1. That's it!  See the <a href="https://code.google.com/p/acra/wiki/BasicSetup">ACRA documentation</a> for advanced configuration options.
+4. That's it!  See the <a href="https://code.google.com/p/acra/wiki/BasicSetup">ACRA documentation</a> for advanced configuration options. If you want to test a crash report, you can do something simple like throwing a RuntimeException in `onResume()` of one of your activities:
+
+            @Override onResume() {
+                throw new RuntimeException("And we're done.");
+            }
