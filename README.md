@@ -117,49 +117,37 @@ This is a Rails backend for [ACRA](https://code.google.com/p/acra).
 
 #### Configure ACRA in an Application subclass
 
-1. If you do not already have an Application subclass, create one. 
-<br />
-<br />
-    1. Create the subclass:
+1. If you do not already have an Application subclass, create one:  
 
-```java
-        import android.app.Application;
+            import android.app.Application;
+   
+            public class MyApplication extends Application {
+            }
+    and update `AndroidManifest.xml` to use your new Application subclass:
+       
+            ...
+            <application android:icon="@drawable/icon" android:label="@string/app_name"
+                android:name="MyApplication">
+            ...
 
-        public class MyApplication extends Application {
-        }
-```
-    
-    1. Update `AndroidManifest.xml` to use your new Application subclass:
+2. Add the `ReportsCrashes` annotation to your Application subclass.  `formKey` will be ignored. Set the value of `formUri` to the `reports` path of your acracadabra service.
 
-```java
-        ...
-        <application android:icon="@drawable/icon" android:label="@string/app_name"
-            android:name="MyApplication">
-        ...
-```
+            ...
+            import org.acra.ACRA;
+            import org.acra.annotation.ReportsCrashes;
+            ...
 
-1. Add the `ReportsCrashes` annotation to your Application subclass.  `formKey` will be ignored. Set the value of `formUri` to the `reports` path of your acracadabra service.
+            @ReportsCrashes(formKey = "",
+                            formUri = "http://<acracadabra_hostname_and_port>/reports")
+            public class MyApplication extends Application {
+            }
 
-```java
-    ...
-    import org.acra.ACRA;
-    import org.acra.annotation.ReportsCrashes;
-    ...
-
-    @ReportsCrashes(formKey = "",
-                    formUri = "http://<acracadabra_hostname_and_port>/reports")
-    public class MyApplication extends Application {
-    }
-```
-
-1. Initialize ACRA in `onCreate()`
+3. Initialize ACRA in `onCreate()`
   
-```java
-    @Override
-    public void onCreate() {
-        ACRA.init(this);
-        super.onCreate();
-    }
-```
+            @Override
+            public void onCreate() {
+                ACRA.init(this);
+                super.onCreate();
+            }
 
 1. That's it!  See the <a href="https://code.google.com/p/acra/wiki/BasicSetup">ACRA documentation</a> for advanced configuration options.
