@@ -1,0 +1,9 @@
+<div class="center hero-unit">
+
+  <% if @recipients.empty? %>
+    <%= render "error" %>
+  <% else %>
+    <%= render "success" %>
+  <% end %>
+
+</div>

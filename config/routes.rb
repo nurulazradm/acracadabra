@@ -1,5 +1,7 @@
 Acrar::Application.routes.draw do
 
+  root :to => 'welcome#home'
+
   match 'reports' => 'reports#create', via: :post
   
   # The priority is based upon order of creation:

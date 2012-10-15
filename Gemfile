@@ -5,6 +5,7 @@ gem 'choices'
 gem 'haml-rails'
 gem 'jquery-rails', '2.1.3'
 gem 'thin'
+gem 'bootstrap-sass', '2.0.4'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
@@ -23,4 +24,3 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 end
-
