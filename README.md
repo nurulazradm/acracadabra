@@ -85,5 +85,13 @@ This is a Rails backend for [ACRA](https://code.google.com/p/acra).
 
 ### Deployment
 
+1. Deploy to Heroku
+
     $ git push heroku master
     $ heroku ps:restart
+
+2. Confirm configuration
+
+    $ heroku open
+
+[TODO] Document steps for disabling welcome page in a production environment.
