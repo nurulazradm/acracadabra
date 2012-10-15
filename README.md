@@ -1,4 +1,4 @@
-# ACRAR - ACRA on Rails
+# acracadabra
 
 Rails backend for [ACRA](https://code.google.com/p/acra/)
 
@@ -29,12 +29,12 @@ This is a Rails backend for [ACRA](https://code.google.com/p/acra).
 
 ### Grab the Source
 
-1. [Fork the repo](https://github.com/livefront/acrar/fork_select)
+1. [Fork the repo](https://github.com/livefront/acracadabra/fork_select)
 
 2. Checkout the source
 
-        $ git clone git@github.com:<your_account>/acrar.git
-        $ cd acrar
+        $ git clone git@github.com:<your_account>/acracadabra.git
+        $ cd acracadabra
         $ git checkout -t origin/stable
         $ git checkout master
 
@@ -44,16 +44,11 @@ This is a Rails backend for [ACRA](https://code.google.com/p/acra).
 
         $ bundle install
 
-2. Set up the database:
-
-        $ rake db:create
-        $ rake db:migrate
-
-3. Set up RSpec
+2. Set up RSpec
 
         $ rails generate rspec:install  
 
-4. Run unit tests:
+3. Run unit tests:
 
         $ rspec
 
@@ -62,6 +57,10 @@ This is a Rails backend for [ACRA](https://code.google.com/p/acra).
         $ foreman start
 
     [Foreman](https://github.com/ddollar/foreman) is used because of its ability to easily set environment variables with the `.env` file. 
+
+5. Confirm the dev server is running
+
+    Load `http://localhost:5000` in your browser.
 
 <a name="deployment"></a>
 ## Deploying to Heroku
@@ -83,5 +82,4 @@ This is a Rails backend for [ACRA](https://code.google.com/p/acra).
 ### Deployment
 
     $ git push heroku master
-    $ heroku run rake db:migrate
     $ heroku ps:restart

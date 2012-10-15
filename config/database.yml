@@ -1,20 +1,21 @@
+# By default, this is set up to use the sqlite3 adapter in order to
+# speed up local dev setup. It is recommended that you switch to
+# postgresql to ensure consistency between dev, test and production
 development:
-  adapter: postgresql
-  database: acrar_development
-  username: postgres
+  adapter: sqlite3
+  database: db/development.sqlite3
   pool: 5
   timeout: 5000
 
 test:
-  adapter: postgresql
-  database: acrar_test
-  username: postgres
+  adapter: sqlite3
+  database: db/test.sqlite3
   pool: 5
   timeout: 5000
 
 # This will be overwritten during deployment to Heroku and is here for Rake tasks.
 production:
   adapter: postgresql
-  database: acrar_production
+  database: acracadabra_production
   pool: 5
   timeout: 5000

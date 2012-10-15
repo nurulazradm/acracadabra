@@ -1,13 +1,19 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
-gem 'pg', '0.14.1'
 gem 'choices'
 gem 'haml-rails'
+gem 'jquery-rails', '2.1.3'
+gem 'thin'
 
 group :development, :test do
+  gem 'sqlite3', '1.3.5'
   gem 'rspec-rails', '2.11.0'
   gem 'foreman'
+end
+
+group :production do
+  gem 'pg', '0.14.1'
 end
 
 # Gems used only for assets and not required
@@ -18,4 +24,3 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails', '2.1.3'
