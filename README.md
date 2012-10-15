@@ -8,8 +8,7 @@ Rails backend for [ACRA](https://code.google.com/p/acra/)
 * [Dependencies](#dependencies)
 * [Development Setup](#setup)
 * [Deploying to Heroku](#deployment)
-* [API Documentation]
-* [Config Vars]
+* [Configuring your Android app](#android-config)
 
 <a name="overview"></a>
 ## Overview
@@ -94,4 +93,65 @@ This is a Rails backend for [ACRA](https://code.google.com/p/acra).
 
     $ heroku open
 
-[TODO] Document steps for disabling welcome page in a production environment.
+3. [Optional] Disable the welcome page in production
+<br />
+<br />
+    1. In `config/routes.rb`, change this:
+
+            root :to => 'welcome#home'
+            # root :to => 'welcome#not_found'
+
+        to this:
+
+            # root :to => 'welcome#home'
+            root :to => 'welcome#not_found'
+            
+<a name="android-config"></a>
+### Configuring your Android app
+
+#### Add the ACRA library
+
+1. Download the [ACRA library](https://code.google.com/p/acra/downloads/list)
+1. Extract the ZIP
+1. Copy the `build/acra-<version>.jar` file to `<android_app_root>/libs`
+
+#### Configure ACRA in an Application subclass
+
+1. If you do not already have an Application subclass, create one. 
+<br />
+<br />
+    1. Create the subclass:
+
+            import android.app.Application;
+
+            public class MyApplication extends Application {
+            }
+    
+    1. Update `AndroidManifest.xml` to use your new Application subclass:
+
+            ...
+            <application android:icon="@drawable/icon" android:label="@string/app_name"
+                android:name="MyApplication">
+            ...
+
+1. Add the `ReportsCrashes` annotation to your Application subclass.  `formKey` will be ignored. Set the value of `formUri` to the `reports` path of your acracadabra service.
+
+        ...
+        import org.acra.ACRA;
+        import org.acra.annotation.ReportsCrashes;
+        ...
+
+        @ReportsCrashes(formKey = "",
+                        formUri = "http://<acracadabra_hostname_and_port>/reports")
+        public class MyApplication extends Application {
+        }
+
+1. Initialize ACRA in `onCreate()`
+
+        @Override
+        public void onCreate() {
+            ACRA.init(this);
+            super.onCreate();
+        }
+
+1. That's it!  See the <a href="https://code.google.com/p/acra/wiki/BasicSetup">ACRA documentation</a> for advanced configuration options.

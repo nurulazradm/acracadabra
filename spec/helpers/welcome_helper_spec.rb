@@ -1,15 +1,24 @@
 require 'spec_helper'
 
-# Specs in this file have access to a helper object that includes
-# the WelcomeHelper. For example:
-#
-# describe WelcomeHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       helper.concat_strings("this","that").should == "this that"
-#     end
-#   end
-# end
 describe WelcomeHelper do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  describe "show_result" do
+
+    describe "when recipients is blank" do
+
+      it "should render an error page" do
+        helper.show_result("").should =~ /Setup incomplete!/
+      end
+
+    end
+
+    describe "when recipients are set" do
+
+      it "should render a success page" do
+        helper.show_result("jeremy@livefront.com").should =~ /Setup complete!/
+      end
+    end
+
+  end
+
 end

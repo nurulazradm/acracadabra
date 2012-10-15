@@ -1,6 +1,9 @@
 Acrar::Application.routes.draw do
 
+  # Once you've completed your testing, comment out this line:
   root :to => 'welcome#home'
+  # and uncomment out the following line to return a 404 in production
+  # root :to => 'welcome#not_found'
 
   match 'reports' => 'reports#create', via: :post
   
