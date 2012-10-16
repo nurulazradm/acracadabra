@@ -2,6 +2,7 @@
 
 Android crash reports. Detailed. Fast. Direct to your inbox.
 
+
 ## Contents
 
 * [Overview](#overview)
@@ -9,6 +10,7 @@ Android crash reports. Detailed. Fast. Direct to your inbox.
 * [Development Setup](#setup)
 * [Deploying to Heroku](#deployment)
 * [Configuring your Android app](#android-config)
+* [License](#license)
 
 <a name="overview"></a>
 ## Overview
@@ -114,15 +116,15 @@ Follow the steps below. You can be up and running in under 20 minutes.
             root :to => 'welcome#not_found'
             
 <a name="android-config"></a>
-### Configuring your Android app
+## Configuring your Android app
 
-#### Add the ACRA library
+### Add the ACRA library
 
 1. Download the [ACRA library](https://code.google.com/p/acra/downloads/list)
 1. Extract the ZIP
 1. Copy the `build/acra-<version>.jar` file to `<android_app_root>/libs`
 
-#### Configure ACRA in an Application subclass
+### Configure ACRA in an Application subclass
 
 1. If you do not already have an Application subclass, create one:  
 
@@ -162,3 +164,10 @@ Follow the steps below. You can be up and running in under 20 minutes.
             @Override onResume() {
                 throw new RuntimeException("And we're done.");
             }
+
+<a href="#license"></a>
+## License
+
+Acradabra is released under the [MIT license](www.opensource.org/licenses/MIT).      
+
+Copyright (c) 2012 Livefront, Inc.  

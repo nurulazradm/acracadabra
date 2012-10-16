@@ -1,3 +1,6 @@
+# Copyright (c) 2012 Livefront, Inc.  
+# See the file license.txt for copying permission.
+
 class WelcomeController < ApplicationController
   def home
     @recipients = ENV['RECIPIENTS']
