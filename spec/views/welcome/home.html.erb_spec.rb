@@ -5,17 +5,43 @@ require 'spec_helper'
 
 describe "welcome/home" do
 
+  let(:config) {
+    { from_address: "john@example.com",
+      recipients: "john@example.com" }
+  }
+
   it "should have a div with the correct classes" do
+    assign(:config, config)
     render
     rendered.should have_selector 'div', class: "center hero-unit"
   end
 
   describe "when setup is incomplete" do
 
-    it "should display an error" do
-      assign(:recipients, "")
-      render
-      rendered.should have_selector 'h1.error'
+    describe "with recipients not defined" do
+
+      before {
+        config.delete(:recipients)
+        assign(:config, config)
+        render
+      }
+      
+      it "should display an error" do
+        rendered.should have_selector 'h1.error'
+      end
+
+    end
+    
+    describe "with from_address not defined" do
+      before {
+        config.delete(:from_address)
+        assign(:config, config)
+        render
+      }
+      
+      it "should display an error" do
+        rendered.should have_selector 'h1.error'
+      end
     end
 
   end
@@ -23,7 +49,7 @@ describe "welcome/home" do
   describe "when setup is complete" do
 
     before do
-      assign(:recipients, "jeremy@livefront.com")
+      assign(:config, config)
       render
     end
 
