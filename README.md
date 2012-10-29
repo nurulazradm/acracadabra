@@ -44,8 +44,6 @@ Follow the steps below. You can be up and running in under 20 minutes.
 
         $ git clone git@github.com:<your_account>/acracadabra.git
         $ cd acracadabra
-        $ git checkout -t origin/stable
-        $ git checkout master
 
 ### App Setup
 
