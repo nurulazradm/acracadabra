@@ -33,27 +33,31 @@
       <section id="main_content" class="inner">
         <h3>Overview</h3>
 
-<p>After weeks or months of development and testing and lots of blood, sweat and tears, you're ready to release your Android app to the world. You've done your best to ensure it's stable, but if it does happen to crash, you want to make sure you can release a fix as soon as possible. So you integrate the Google Analytics Android SDK to track your app's exceptions.</p>
+<p>After weeks or months of development and testing and lots of blood, sweat and tears, you release your Android app. A few days later, you see a comment about your app crashing in Google Play Store:</p>
 
-<p>Not long after publishing your app in Google Play Store, you see the following in your Google Analytics exception log:</p>
+<blockquote>
+<p>This app sucks. Constantly crashes.</p>
+</blockquote>
 
-<p><strong>Google</strong></p>
+<p>You then log in to the Android Developer Console for your app, hoping to get a little more detail. "Crashes. 0 new. 0 reports." Unfortunately, the user who experienced the crash didn't submit a crash report.</p>
+
+<p>You're stuck.</p>
+
+<p>Maybe you integrated the Google Analytics Android SDK to track your app's exceptions, so you check out the reports for your app. </p>
 
 <pre><code>Can't create handler inside thread that has not called Looper.prepare()
 </code></pre>
 
-<p>Yes, that's it. And it's happened six times in the last two days.</p>
+<p>Yes, that's all the detail you get. And it's happened six times in the last two days.</p>
 
-<p>Maybe instead of Google Analytics, you chose Flurry.</p>
-
-<p><strong>Flurry</strong></p>
+<p>Maybe instead of Google Analytics you chose Flurry.</p>
 
 <pre><code>class java.lang.RuntimeException
 Msg: android.os.Handler.&lt;init&gt;:121 (Can't create handler inside thread that has
 not called Looper.prepare())
 </code></pre>
 
-<p>Not much better. Where in your app is this occurring? You then log in to the Android Developer Console for your app, hoping to get a little more detail. "Crashes. 0 new. 0 reports." Unfortunately, none of users who experienced the crash submitted a crash report.</p>
+<p>Not much better. Where in your app is this occurring? You use a Handler dozens of places throughout your app.</p>
 
 <p>You're stuck.</p>
 
