@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Acracadabra : Android crash reports. Detailed. Fast. Direct to your inbox." />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Acracadabra</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/livefront/acracadabra">View on GitHub</a>
+
+          <h1 id="project_title">Acracadabra</h1>
+          <h2 id="project_tagline">Android crash reports. Detailed. Fast. Direct to your inbox.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/livefront/acracadabra/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/livefront/acracadabra/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>Overview</h3>
+
+<p>After weeks or months of development and testing and lots of blood, sweat and tears, you're ready to release your Android app to the world. You've done your best to ensure it's stable, but if it does happen to crash, you want to make sure you can release a fix as soon as possible. So you integrate the Google Analytics Android SDK to track your app's exceptions.</p>
+
+<p>Not long after publishing your app in Google Play Store, you see the following in your Google Analytics exception log:</p>
+
+<p><strong>Google</strong></p>
+
+<pre><code>Can't create handler inside thread that has not called Looper.prepare()
+</code></pre>
+
+<p>Yes, that's it. And it's happened six times in the last two days.</p>
+
+<p>Maybe instead of Google Analytics, you chose Flurry.</p>
+
+<p><strong>Flurry</strong></p>
+
+<pre><code>class java.lang.RuntimeException
+Msg: android.os.Handler.&lt;init&gt;:121 (Can't create handler inside thread that has
+not called Looper.prepare())
+</code></pre>
+
+<p>Not much better. Where in your app is this occurring? You then log in to the Android Developer Console for your app, hoping to get a little more detail. "Crashes. 0 new. 0 reports." Unfortunately, none of users who experienced the crash submitted a crash report.</p>
+
+<p>You're stuck.</p>
+
+<p>Enter Acracadabra.</p>
+
+<p>Acracadabra is a Rails app that receives <a href="https://github.com/ACRA/acra">ACRA</a>-generated crash reports from Android applications and passes them directly to your email inbox. What's ACRA?</p>
+
+<blockquote>
+<p>...a library enabling Android Application to automatically post their crash reports to a GoogleDoc form. It is targetted to android applications developers to help them get data from their applications when they crash or behave erroneously.</p>
+
+<p>[It] can be used with your own self-hosted report receiver script.</p>
+</blockquote>
+
+<p>Acracadabra is a fast-pass to your own "self-hosted report receiver script."</p>
+
+<p><a href="https://github.com/livefront/acracadabra">Check it out</a>. You can be up and running in under 20 minutes.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Acracadabra maintained by <a href="https://github.com/livefront">livefront</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
