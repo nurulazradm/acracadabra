@@ -91,6 +91,7 @@ Follow the steps below. You can be up and running in under 20 minutes.
 
 2. Set Heroku config variable for report recipients
 
+        $ heroku config:add FROM_ADDRESS=<email_address>
         $ heroku config:add RECIPIENTS=<email_address>
 
 ### Deployment
