@@ -71,6 +71,44 @@ not called Looper.prepare())
 
 <p>Acracadabra is a fast-pass to your own "self-hosted report receiver script."</p>
 
+<p>With Acracadabra, you would have received a complete crash report in your email inbox immediately after the app crashed. Here's an excerpt:</p>
+
+<pre><code>java.lang.reflect.InvocationTargetException 
+at java.lang.reflect.Constructor.constructNative(Native Method) 
+at java.lang.reflect.Constructor.newInstance(Constructor.java:415) 
+at android.preference.GenericInflater.createItem(GenericInflater.java:383) 
+at android.preference.GenericInflater.onCreateItem(GenericInflater.java:417) 
+at android.preference.GenericInflater.createItemFromTag(GenericInflater.java:428) 
+at android.preference.GenericInflater.rInflate(GenericInflater.java:481) 
+at android.preference.GenericInflater.rInflate(GenericInflater.java:493) 
+at android.preference.GenericInflater.inflate(GenericInflater.java:326) 
+at android.preference.GenericInflater.inflate(GenericInflater.java:263) 
+at android.preference.PreferenceManager.inflateFromResource(PreferenceManager.java:254) 
+at android.preference.PreferenceManager.setDefaultValues(PreferenceManager.java:447) 
+at android.preference.PreferenceManager.setDefaultValues(PreferenceManager.java:425) 
+at com.example.activity.BaseActivity$LogoutTask.doInBackground(BaseActivity.java:255) 
+at com.example.activity.BaseActivity$LogoutTask.doInBackground(BaseActivity.java:1) 
+at android.os.AsyncTask$2.call(AsyncTask.java:185) 
+at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:306) 
+at java.util.concurrent.FutureTask.run(FutureTask.java:138) 
+at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1088) 
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:581) 
+at java.lang.Thread.run(Thread.java:1027) 
+Caused by: java.lang.RuntimeException: Can't create handler inside thread that has not called Looper.prepare() 
+at android.os.Handler.(Handler.java:121) 
+at android.view.GestureDetector$GestureHandler.(GestureDetector.java:250) 
+at android.view.GestureDetector.(GestureDetector.java:370) 
+at android.view.GestureDetector.(GestureDetector.java:347) 
+at android.view.GestureDetector.(GestureDetector.java:331) 
+at android.widget.TextView.(TextView.java:1016) 
+at android.widget.EditText.(EditText.java:60) 
+at android.widget.EditText.(EditText.java:56) 
+at android.preference.EditTextPreference.(EditTextPreference.java:56) 
+at android.preference.EditTextPreference.(EditTextPreference.java:71) 
+</code></pre>
+
+<p>That's more like it.</p>
+
 <p><a href="https://github.com/livefront/acracadabra">Check it out</a>. You can be up and running in under 20 minutes.</p>
       </section>
     </div>
