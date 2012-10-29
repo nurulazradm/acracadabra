@@ -177,4 +177,4 @@ Follow the steps below. You can be up and running in under 20 minutes.
 
 Acradabra is released under the [MIT license](www.opensource.org/licenses/MIT).      
 
-Copyright (c) 2012 Livefront, Inc.  
+Copyright (c) 2012 [Livefront, Inc](http://livefront.com).  
