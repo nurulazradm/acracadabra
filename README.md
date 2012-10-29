@@ -1,6 +1,6 @@
 # Acracadabra
 
-Android crash reports. Detailed. Fast. Direct to your inbox.
+Android crash reports. Detailed. Fast. Direct to your inbox. [Why?](http://livefront.github.com/acracadabra)
 
 ## Contents
 
