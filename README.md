@@ -2,7 +2,6 @@
 
 Android crash reports. Detailed. Fast. Direct to your inbox.
 
-
 ## Contents
 
 * [Overview](#overview)
@@ -17,7 +16,7 @@ Android crash reports. Detailed. Fast. Direct to your inbox.
 
 Acracadabra is a Rails app that receives [ACRA](https://github.com/ACRA/acra)-generated crash reports from Android applications and passes them directly to your email inbox. What's ACRA?
 
-> ...a library enabling Android Application to automatically post their crash reports to a GoogleDoc form. It is targetted to android applications developers to help them get data from their applications when they crash or behave erroneously.
+> ...a library enabling Android Application to automatically post their crash reports to a GoogleDoc form. It is targetted to Android applications developers to help them get data from their applications when they crash or behave erroneously.
 
 > [It] can be used with your own self-hosted report receiver script.
 
@@ -28,7 +27,7 @@ Follow the steps below. You can be up and running in under 20 minutes.
 <a name="dependencies"></a>
 ## Dependencies
 
-* See the Gemfile
+* See the [Gemfile](https://github.com/livefront/acracadabra/blob/master/Gemfile)
 * Ruby 1.9.3
 * Rails 3.2.8
 * [Heroku Toolbelt](https://toolbelt.heroku.com/)
@@ -37,6 +36,8 @@ Follow the steps below. You can be up and running in under 20 minutes.
 ## Setup
 
 ### Grab the Source
+
+If you do not have a GitHub account, you can [download the source](https://github.com/livefront/acracadabra/downloads). Otherwise, fork this repo:
 
 1. [Fork the repo](https://github.com/livefront/acracadabra/fork_select)
 
