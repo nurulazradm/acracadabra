@@ -15,7 +15,7 @@ Android crash reports. Detailed. Fast. Direct to your inbox.
 <a name="overview"></a>
 ## Overview
 
-Acracadabra is a Rails app that receives [ACRA](https://code.google.com/p/acra)-generated crash reports from Android applications and passes them directly to your email inbox. What's ACRA?
+Acracadabra is a Rails app that receives [ACRA](https://github.com/ACRA/acra)-generated crash reports from Android applications and passes them directly to your email inbox. What's ACRA?
 
 > ...a library enabling Android Application to automatically post their crash reports to a GoogleDoc form. It is targetted to android applications developers to help them get data from their applications when they crash or behave erroneously.
 
@@ -31,6 +31,7 @@ Follow the steps below. You can be up and running in under 20 minutes.
 * See the Gemfile
 * Ruby 1.9.3
 * Rails 3.2.8
+* [Heroku Toolbelt](https://toolbelt.heroku.com/)
 
 <a name="setup"></a>
 ## Setup
@@ -60,8 +61,9 @@ Follow the steps below. You can be up and running in under 20 minutes.
 
         $ rspec
 
-4. Specify report recipients in the `.env` file.  Example:
+4. Specify 'from' address and report recipients in the `.env` file.  Example:
 
+        FROM_ADDRESS=jeremy@livefront.com
         RECIPIENTS=jeremy@livefront.com
 
 5. Fire it up:
@@ -120,7 +122,7 @@ Follow the steps below. You can be up and running in under 20 minutes.
 
 ### Add the ACRA library
 
-1. Download the [ACRA library](https://code.google.com/p/acra/downloads/list)
+1. Download the [ACRA library](https://github.com/ACRA/acra/downloads)
 1. Extract the ZIP
 1. Copy the `build/acra-<version>.jar` file to `<android_app_root>/libs`
 
@@ -128,42 +130,46 @@ Follow the steps below. You can be up and running in under 20 minutes.
 
 1. If you do not already have an Application subclass, create one:  
 
-            import android.app.Application;
-   
-            public class MyApplication extends Application {
-            }
+        import android.app.Application;
+
+        public class MyApplication extends Application {
+        }
     and update `AndroidManifest.xml` to use your new Application subclass:
        
-            ...
-            <application android:icon="@drawable/icon" android:label="@string/app_name"
-                android:name="MyApplication">
-            ...
+        ...
+        <application android:icon="@drawable/icon" android:label="@string/app_name"
+            android:name="MyApplication">
+        ...
 
 2. Add the `ReportsCrashes` annotation to your Application subclass.  `formKey` will be ignored. Set the value of `formUri` to the `reports` path of your acracadabra service.
 
-            ...
-            import org.acra.ACRA;
-            import org.acra.annotation.ReportsCrashes;
-            ...
+        ...
+        import org.acra.ACRA;
+        import org.acra.annotation.ReportsCrashes;
+        ...
 
-            @ReportsCrashes(formKey = "",
-                            formUri = "http://<acracadabra_hostname_and_port>/reports")
-            public class MyApplication extends Application {
-            }
+        @ReportsCrashes(formKey = "",
+                        formUri = "http://<acracadabra_hostname_and_port>/reports")
+        public class MyApplication extends Application {
+        }
 
 3. Initialize ACRA in `onCreate()`
   
-            @Override
-            public void onCreate() {
-                ACRA.init(this);
-                super.onCreate();
-            }
+        @Override
+        public void onCreate() {
+            ACRA.init(this);
+            super.onCreate();
+        }
 
-4. That's it!  See the <a href="https://code.google.com/p/acra/wiki/BasicSetup">ACRA documentation</a> for advanced configuration options. If you want to test a crash report, you can do something simple like throwing a RuntimeException in `onResume()` of one of your activities:
+4. If your `AndroidManifest.xml` does not already request the `INTERNET` permission, add it:
 
-            @Override onResume() {
-                throw new RuntimeException("And we're done.");
-            }
+        <uses-permission android:name="android.permission.INTERNET"/>
+
+5. That's it!  See the <a href="https://code.google.com/p/acra/wiki/BasicSetup">ACRA documentation</a> for advanced configuration options. If you want to test a crash report, you can do something simple like throwing a RuntimeException in `onResume()` of one of your activities:
+
+        @Override onResume() {
+            throw new RuntimeException("And we're done.");
+        }
 
 <a href="#license"></a>
 ## License

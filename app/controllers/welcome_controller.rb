@@ -3,7 +3,9 @@
 
 class WelcomeController < ApplicationController
   def home
-    @recipients = ENV['RECIPIENTS']
+    from_address = Rails.configuration.from_address
+    recipients = Rails.configuration.recipients
+    @config = {from_address: from_address, recipients: recipients}
   end
 
   def not_found

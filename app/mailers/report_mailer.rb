@@ -2,7 +2,7 @@
 # See the file license.txt for copying permission.
 
 class ReportMailer < ActionMailer::Base
-  default from: 'ACRAR <jeremy@livefront.com>'
+  default from: Rails.configuration.from_address
   
   def report(email, report)
     @params = report

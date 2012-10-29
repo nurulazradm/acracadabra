@@ -1,4 +1,5 @@
 defaults: &defaults
+  from_address: <%= ENV['FROM_ADDRESS'] %>
   recipients: <%= ENV['RECIPIENTS'] %>
 
 development:

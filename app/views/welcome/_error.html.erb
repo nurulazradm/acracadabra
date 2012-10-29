@@ -1,7 +1,11 @@
 <h1 class="error">Setup incomplete!</h1>
 
-<p>Report recipients are not configured.</p>
-<p>Configure recipeients using the <span class="code">RECEIPIENTS</span> environment variable.
-  See the <a href="https://github.com/livefront/acracadabra/blob/master/README.md">README</a>
-  for details.
-</p>
+<% if @config[:from_address].blank? %>
+  <p><span class="code">FROM_ADDRESS</span> environment variable not defined.<p>
+<% end %>
+
+<% if @config[:recipients].blank? %>
+  <p><span class="code">RECIPIENTS</span> environment variable not defined.<p>
+<% end %>
+
+<p> See the <a href="https://github.com/livefront/acracadabra/blob/master/README.md">README</a> for details.</p>
