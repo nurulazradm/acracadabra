@@ -174,6 +174,6 @@ If you do not have a GitHub account, you can [download the source](https://githu
 <a href="#license"></a>
 ## License
 
-Acradabra is released under the [MIT license](www.opensource.org/licenses/MIT).      
+Acradabra is released under the [MIT license](http://www.opensource.org/licenses/MIT).      
 
 Copyright (c) 2012 [Livefront, Inc](http://livefront.com).  
