@@ -12,6 +12,7 @@ group :development, :test do
   gem 'rspec-rails', '2.11.0'
   gem 'foreman'
   gem 'capybara'
+  gem 'therubyracer'
 end
 
 group :production do
